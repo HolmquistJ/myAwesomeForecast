@@ -1,0 +1,14 @@
+language: r
+cache: packages
+
+install: 
+  - Rscript install.R
+
+script:
+  - Rscript forecast.R
+ 
+ deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  target_branch: master
